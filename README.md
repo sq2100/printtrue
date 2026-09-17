@@ -4,7 +4,7 @@
 
 Lay out an image at an exact physical size on A4 or Letter. Add copies and a calibration ruler, then print at 100%.
 
-[Open the app](https://utokyo2026.github.io/printtrue/) · [Download offline HTML](https://github.com/UTokyo2026/printtrue/releases/latest) · [简体中文](README.zh-CN.md)
+[Open the app](https://sq2100.com/printtrue/) · [Download offline HTML](https://github.com/sq2100/printtrue/releases/latest) · [简体中文](README.zh-CN.md)
 
 ![PrintTrue example](docs/demo.png)
 
@@ -20,7 +20,7 @@ No uploads, account, API key, tracking scripts, or runtime CDN dependencies. The
 
 ## Quick start
 
-Open the [hosted app](https://utokyo2026.github.io/printtrue/) and click **Try an example**. Or download the HTML from [Releases](https://github.com/UTokyo2026/printtrue/releases/latest), then open it in a modern desktop browser.
+Open the [hosted app](https://sq2100.com/printtrue/) and click **Try an example**. Or download the HTML from [Releases](https://github.com/sq2100/printtrue/releases/latest), then open it in a modern desktop browser.
 
 To build from source (Node.js 20.19+):
 

@@ -2,7 +2,7 @@
 
 将图片按指定毫米尺寸排版在 A4 或 Letter 上，附校准尺。
 
-[在线使用](https://utokyo2026.github.io/printtrue/) · [下载离线网页](https://github.com/UTokyo2026/printtrue/releases/latest) · [完整英文说明](README.md)
+[在线使用](https://sq2100.com/printtrue/) · [下载离线网页](https://github.com/sq2100/printtrue/releases/latest) · [完整英文说明](README.md)
 
 ![演示界面](docs/demo.png)
 
