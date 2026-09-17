@@ -1,0 +1,21 @@
+{
+  "name": "printtrue",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Lay out an image at an exact physical size on A4 or Letter. Add copies and a calibration ruler, then print at 100%.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "start": "node scripts/serve.mjs",
+    "format": "prettier --write src scripts tests"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "prettier": "3.8.1"
+  }
+}

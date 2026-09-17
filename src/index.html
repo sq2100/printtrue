@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!--POLICY-->
+    <title>
+      PrintTrue — Lay out an image at an exact physical size on A4 or Letter
+    </title>
+    <meta
+      name="description"
+      content="Lay out an image at an exact physical size on A4 or Letter. Add copies and a calibration ruler, then print at 100%."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2377633e'/%3E%3Ctext x='32' y='44' font-size='39' text-anchor='middle' fill='white' font-family='Arial'%3EP%3C/text%3E%3C/svg%3E"
+    />
+    <!--STYLE-->
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand"
+        ><span class="brandmark" aria-hidden="true">▧</span>PrintTrue</a
+      >
+      <nav class="nav">
+        <button class="text-button desktop" id="privacy">Local & private</button
+        ><a
+          href="https://github.com/UTokyo2026/printtrue/blob/main/README.zh-CN.md"
+          target="_blank"
+          rel="noreferrer"
+          >中文说明</a
+        ><a
+          href="https://github.com/UTokyo2026/printtrue"
+          target="_blank"
+          rel="noreferrer"
+          >GitHub ↗</a
+        >
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">PRINT / THE SIZE YOU MEANT</p>
+          <h1>Pixels on screen.<br />Millimeters on paper.</h1>
+          <p class="intro">
+            Lay out an image at an exact physical size on A4 or Letter. Add
+            copies and a calibration ruler, then print at 100%.
+          </p>
+        </div>
+        <div class="hero-note" aria-hidden="true">
+          <strong>▧</strong><span>LOCAL BY DESIGN</span>
+        </div>
+      </section>
+      <section class="workbench" aria-label="PrintTrue workspace">
+        <div class="workbar">
+          <span>01 / YOUR WORKSPACE</span
+          ><button id="demo" class="text-button">Try an example ↗</button>
+        </div>
+        <div class="grid sidebar">
+          <div class="pane">
+            <label class="file-button"
+              >Choose image<input
+                id="image"
+                type="file"
+                accept="image/png,image/jpeg,image/webp"
+                hidden
+            /></label>
+            <p class="hint" id="image-label">
+              PNG, JPEG or WebP · up to 20 MiB
+            </p>
+            <div class="field-row">
+              <label class="field"
+                ><span>Width (mm)</span
+                ><input
+                  id="width"
+                  type="number"
+                  value="85.6"
+                  min="5"
+                  step="0.1" /></label
+              ><label class="field"
+                ><span>Height (mm)</span
+                ><input id="height" type="number" value="54" min="5" step="0.1"
+              /></label>
+            </div>
+            <div class="field-row">
+              <label class="field"
+                ><span>Copies</span
+                ><input
+                  id="copies"
+                  type="number"
+                  value="4"
+                  min="1"
+                  max="100" /></label
+              ><label class="field"
+                ><span>Paper</span
+                ><select id="page">
+                  <option value="a4">A4</option>
+                  <option value="letter">US Letter</option>
+                </select></label
+              >
+            </div>
+            <div class="field-row">
+              <label class="field"
+                ><span>Margin (mm)</span
+                ><input id="margin" type="number" value="12" min="5" /></label
+              ><label class="field"
+                ><span>Gap (mm)</span
+                ><input id="gap" type="number" value="5" min="0"
+              /></label>
+            </div>
+            <label class="field"
+              ><span>Image fit</span
+              ><select id="fit">
+                <option value="contain">Fit inside (no crop)</option>
+                <option value="cover">Fill frame (center crop)</option>
+              </select></label
+            ><label class="field"
+              ><input id="guides" type="checkbox" checked /> Print cut
+              guides</label
+            >
+          </div>
+          <div class="pane">
+            <h3>Sheet preview</h3>
+            <div class="paper-stage" id="output">
+              <div class="empty">
+                Your print sheet appears here.<br />Dimensions are defined in
+                millimeters.
+              </div>
+            </div>
+            <p class="hint">
+              The screen preview is scaled. Use the exported sheet for printing.
+            </p>
+          </div>
+        </div>
+        <div class="actions">
+          <p class="hint">
+            No uploads. No account. No changes to your source files.
+          </p>
+          <div class="group">
+            <button id="run" class="primary">Build print sheet →</button>
+          </div>
+        </div>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </section>
+      <section class="results">
+        <div class="result-head">
+          <h2>02 / Your result</h2>
+          <div class="group">
+            <button id="export" data-export disabled>
+              Download print sheet ↓
+            </button>
+          </div>
+        </div>
+        <div id="stats" class="stats"></div>
+      </section>
+      <section class="guide">
+        <article>
+          <h3>
+            01 / A4 / US Letter layout with exact CSS millimeter dimensions
+          </h3>
+          <p>
+            Print a small artwork, label or card at a specified physical size.
+          </p>
+        </article>
+        <article>
+          <h3>
+            02 / Multiple copies, safe margins, fit/crop options and cut guides
+          </h3>
+          <p>Everything is processed inside this browser tab.</p>
+        </article>
+        <article>
+          <h3>
+            03 / Portable print sheet with a 100 mm calibration ruler when space
+            permits
+          </h3>
+          <p>Take the result with you. No account or subscription required.</p>
+        </article>
+      </section>
+      <details class="details">
+        <summary>Scope, formats and limitations</summary>
+        <p>
+          Dimensions specify the image frame. Contain preserves the complete
+          image with possible blank space; Cover crops from the center. Input
+          images must be PNG, JPEG or WebP under 20 MiB. Print at Actual size /
+          100%, with browser headers/footers disabled and no extra margins.
+          Printer drivers can scale or clip output; measure the calibration
+          ruler after printing. Physical printer output has not been verified.
+          This is not an official ID-photo compliance checker. Exported HTML
+          embeds the original image data and may retain its metadata.
+        </p>
+      </details>
+    </main>
+    <footer>
+      <span>PrintTrue · A small tool for a real task.</span
+      ><span
+        ><a href="https://github.com/UTokyo2026/printtrue">Open source</a> · MIT
+        · Works offline after download</span
+      >
+    </footer>
+    <dialog id="privacy-dialog">
+      <h2>Your data stays here.</h2>
+      <p>
+        Processing happens in this browser tab. This app has no analytics,
+        server processing, remote scripts or persistent app storage. Downloads
+        contain the data you choose to export.
+      </p>
+      <p>
+        A hosted page still exposes normal request metadata to its host.
+        Download the standalone HTML and open it offline for disconnected use.
+        Browser extensions and your device are outside the app’s control.
+      </p>
+      <button id="close-privacy">Got it</button>
+    </dialog>
+    <noscript>JavaScript is required for local processing.</noscript
+    ><!--SCRIPT-->
+  </body>
+</html>
